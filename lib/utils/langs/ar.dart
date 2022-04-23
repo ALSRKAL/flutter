@@ -1,0 +1,22 @@
+const Map<String , String > ar={
+  'Contunie with phone':'المتابع برقم الهاتف ',
+  'VERIFY':'التحقق',
+  'Mobile Number':"رقم الهاتف",
+  'Send':"أرسال",
+  'Verify Phone':"التحقق من الهاتف",
+  'Phone Number Verification':"التحقق من رقم الهاتف",
+  'Enter the code sent to':"أدخل الرمز المرسل إلى",
+  "Didn't receive the code?":'لم يصلك الرمز؟',
+  'RESEND':"أعاده الارسال",
+  'User Name':'اسم المستخدم',
+  'Need Help?':'المساعدة؟',
+  'Your Favorite':'المفضله',
+  'Language switcher':'اللغة',
+  'Change Language':'تغير اللغة',
+  'Sms sent':'تم ارسال رمز التحقق',
+  'Sign out':'تسجيل الخروج',
+   'Erorr':'خطأ',
+  'fill blank':'املأ الفراغ',
+    'invalid phone number':'رقم الهاتف غير صالح',
+  'Wrong code Try again':'رمز التحقق خاطئ حاول مجدداَ'
+};

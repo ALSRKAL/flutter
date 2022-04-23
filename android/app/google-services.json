@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "59735538114",
+    "project_id": "dcotor-f4dde",
+    "storage_bucket": "dcotor-f4dde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59735538114:android:56d88c91cae2be63b43e5b",
+        "android_client_info": {
+          "package_name": "com.example.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59735538114-nueacu60lovbvoj4smc5mq81s13818qj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doctor",
+            "certificate_hash": "9b5a75ac9c0d19c01e347caa6f1650496999c7c0"
+          }
+        },
+        {
+          "client_id": "59735538114-4cebsgbj9em8l4hig99b54g45frfsfrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa2Lr7cfAU5NAKsg6llPTKz4tTVdGbYmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59735538114-4cebsgbj9em8l4hig99b54g45frfsfrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
