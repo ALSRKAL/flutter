@@ -38,7 +38,12 @@ class HomeScreen extends StatelessWidget {
                     icon: const Icon(Icons.search))
               ],
             ),
-            body: Column(children: []),
+            body: Column(children: [
+              const SizedBox(
+                height: 15,
+              ),
+              photoSlider()
+            ]),
             drawer: Padding(
               padding: EdgeInsets.only(top: m),
               child: Drawar(),
@@ -47,3 +52,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
