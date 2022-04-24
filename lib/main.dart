@@ -6,6 +6,7 @@ import 'package:doctor/screens/User_information.dart';
 import 'package:doctor/screens/homeScreen.dart';
 import 'package:doctor/screens/singin.dart';
 import 'package:doctor/screens/LanguageScreen.dart';
+import 'package:doctor/screens/splashScreen.dart';
 import 'package:doctor/utils/langs/translation.dart';
 import 'package:doctor/widget/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,6 +34,8 @@ class MyApp extends StatelessWidget {
   
   Widget build(BuildContext context) {
     
+    SplashScreen();
+    
     
     return GetMaterialApp(
       
@@ -49,13 +52,17 @@ class MyApp extends StatelessWidget {
       translations: translation(),
            
       
-      initialRoute:_auth.currentUser!=null?HomeScreen.id: SingiIn.id,
+      initialRoute:SplashScreen.id,
+      // _auth.currentUser!=null?HomeScreen.id: SingiIn.id,
+      // 
       routes: {
+        SplashScreen.id:(context)=>SplashScreen(),
         SingiIn.id: (context) =>  SingiIn(),
         OtpScreen.id: (context) => OtpScreen(),
         HomeScreen.id: (context) => HomeScreen(),
         profiel.id: (context)=> profiel(),
         langScreen.id: (context) =>  langScreen(),
+
       },
     );
   }

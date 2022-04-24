@@ -15,15 +15,15 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<Homecrt>(
       init: Homecrt(),
       builder: ((value) => Scaffold(
-            backgroundColor: Color.fromARGB(255, 170, 40, 40),
+            backgroundColor: kprimryColors,
             appBar: AppBar(
               flexibleSpace: Container(
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20)),
-                          ),
-                          ),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20)),
+                ),
+              ),
               centerTitle: true,
               backgroundColor: kappbar,
               title: const Text(
@@ -38,9 +38,7 @@ class HomeScreen extends StatelessWidget {
                     icon: const Icon(Icons.search))
               ],
             ),
-            body: Column(children: [
-             photoSlider()
-            ]),
+            body: Column(children: []),
             drawer: Padding(
               padding: EdgeInsets.only(top: m),
               child: Drawar(),
