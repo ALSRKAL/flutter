@@ -15,6 +15,7 @@ class photoSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       width: MediaQuery.of(context).size.width,
       height: 150,
       child: ListView.builder(
@@ -38,7 +39,7 @@ class photoSlider extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Photo1slider()));
+                                builder: (context) => Photo1slider(i: i,)));
                       },
                       child: Ink.image(
                         image: AssetImage("${photoSliderList[i]['photo']}"),
@@ -48,10 +49,10 @@ class photoSlider extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        right: 20,
-                        width: 30,
-                        height: 30,
-                        child: Image.asset(
+                        left: 10,
+                        width: 60,
+
+                        child: Lottie.asset(
                           "${photoSliderList[i]['lottie']}",
                         ))
                   ],
