@@ -22,5 +22,8 @@ const Map<String , String > ar={
   'Confrim Sign Out':'تسجيل الخروج',
   'Do you really want to sign out ?':'هل تريد تسجيل الخروج ؟',
   'Cancel':'الغاء',
-  'Confrim':'التاكيد'
+  'Confrim':'التاكيد',
+  'Book':'احجز',
+  'more..':'اكثر',
+  'less':'اقل'
 };
