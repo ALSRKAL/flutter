@@ -1,5 +1,6 @@
 import 'package:doctor/screens/GetxHome/homeGetx.dart';
 import 'package:doctor/screens/drawer.dart';
+import 'package:doctor/utils/langs/language_controller.dart';
 import 'package:doctor/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ import '../widget/photoSlider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'HomeScreen';
+ 
   @override
   Widget build(BuildContext context) {
     var m = AppBar().preferredSize.height;
@@ -38,12 +40,17 @@ class HomeScreen extends StatelessWidget {
                     icon: const Icon(Icons.search))
               ],
             ),
-            body: Column(children: [
-              const SizedBox(
-                height: 15,
-              ),
-              photoSlider()
-            ]),
+            body: GetBuilder<LanguageConotroller>(
+              init: LanguageConotroller(),
+              builder: ((V){
+                return
+               Column(children: [
+                const SizedBox(
+                  height: 15,
+                ),
+                photoSlider()
+              ]);}),
+            ),
             drawer: Padding(
               padding: EdgeInsets.only(top: m),
               child: Drawar(),

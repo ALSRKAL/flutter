@@ -18,5 +18,9 @@ const Map<String , String > ar={
    'Erorr':'خطأ',
   'fill blank':'املأ الفراغ',
     'invalid phone number':'رقم الهاتف غير صالح',
-  'Wrong code Try again':'رمز التحقق خاطئ حاول مجدداَ'
+  'Wrong code Try again':'رمز التحقق خاطئ حاول مجدداَ',
+  'Confrim Sign Out':'تسجيل الخروج',
+  'Do you really want to sign out ?':'هل تريد تسجيل الخروج ؟',
+  'Cancel':'الغاء',
+  'Confrim':'التاكيد'
 };

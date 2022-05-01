@@ -4,8 +4,10 @@ import 'package:doctor/screens/Otp_screen.dart';
 import 'package:doctor/screens/homeScreen.dart';
 import 'package:doctor/screens/singin.dart';
 import 'package:doctor/widget/Snakbar.dart';
+import 'package:doctor/widget/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class phoneAuthCrt extends GetxController {
@@ -17,19 +19,13 @@ class phoneAuthCrt extends GetxController {
   bool showLoading = false;
 
   RxBool wait = true.obs;
-  List<String>i=['English','عربي' ];
+  List<String> i = ['English', 'عربي'];
   String dropdownValue = 'English';
-  late String newValue ;
+  late String newValue;
   String result = '';
   String initialCode = '+91';
-  var num =0.obs;
-  RxString resend= 'RESEND'.obs;
-  
-
-
-  
-
- 
+  var num = 0.obs;
+  RxString resend = 'RESEND'.obs;
 
   void signInwithPhoneAuthCredential(
       PhoneAuthCredential phoneAuthCredential, context) async {
@@ -40,7 +36,6 @@ class phoneAuthCrt extends GetxController {
           await auth.signInWithCredential(phoneAuthCredential);
       showLoading = false;
       if (userCredential.user != null) {
-       
         Get.offNamed(HomeScreen.id);
       }
     } on FirebaseAuthException catch (e) {
@@ -60,9 +55,7 @@ class phoneAuthCrt extends GetxController {
     await auth.verifyPhoneNumber(
         phoneNumber: result,
         verificationCompleted: (PhoneAuthCredential credential) async {
-          await auth.signInWithCredential(credential).then((value) async {
-            
-          });
+          await auth.signInWithCredential(credential).then((value) async {});
         },
         verificationFailed: (FirebaseAuthException e) {
           showLoading = false;
@@ -80,31 +73,35 @@ class phoneAuthCrt extends GetxController {
           showLoading = false;
           _verificationid = verificationid;
           Get.offNamedUntil(OtpScreen.id, (route) => false);
-          
-
-
         },
         codeAutoRetrievalTimeout: (String verificationid) {
           verificationid = verificationid;
-
         });
 
     update();
-
   }
-  
-    
-    
-    void changedropdown(value){
-      dropdownValue = value;
-      update();
-    }
-    
-  Future<void> siginOut()async{
+
+  void changedropdown(value) {
+    dropdownValue = value;
+    update();
+  }
+
+  Future<void> siginOut() async {
     await auth.signOut();
   }
-  
-  
 
-  
+  confirmSignOut() {
+    Get.defaultDialog(
+        title: 'Confrim Sign Out'.tr,
+        middleText: 'Do you really want to sign out ?'.tr,
+        textCancel: 'Cancel'.tr,
+        textConfirm: 'Confrim'.tr,
+        buttonColor: kappbar,
+        confirmTextColor: Colors.white,
+        onConfirm: () {
+          siginOut();
+
+          SystemNavigator.pop();
+        });
+  }
 }

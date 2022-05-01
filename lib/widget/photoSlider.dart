@@ -4,115 +4,68 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lottie/lottie.dart';
 
+import '../dataJson/ListOfJson.dart';
 import '../screens/1photoSlider.dart';
 
 class photoSlider extends StatelessWidget {
-  const photoSlider({
+  photoSlider({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          const SizedBox(
-            width: 20,
-          ),
-          Hero(
-            tag: '1photoSlider',
-            child: Material(
-              elevation: 8,
-              borderRadius: BorderRadius.circular(20),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Stack(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Photo1slider()));
-                    },
-                    child: Ink.image(
-                      image: const AssetImage('images/hospital/s.jpg'),
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width / 1.1,
-                      height: 180,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 150,
+      child: ListView.builder(
+        itemCount: photoSliderList.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, i) => Row(
+          children: [
+            const SizedBox(
+              width: 20,
+            ),
+            Hero(
+              tag: "${photoSliderList[i]['name']}",
+              child: Material(
+                elevation: 8,
+                borderRadius: BorderRadius.circular(20),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Stack(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Photo1slider()));
+                      },
+                      child: Ink.image(
+                        image: AssetImage("${photoSliderList[i]['photo']}"),
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width / 1.1,
+                        height: 180,
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    bottom: 100,
-                    child: Lottie.asset(
-                      'images/discound.json',
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                ],
+                    Positioned(
+                        right: 20,
+                        width: 30,
+                        height: 30,
+                        child: Image.asset(
+                          "${photoSliderList[i]['lottie']}",
+                        ))
+                  ],
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Material(
-            elevation: 8,
-            borderRadius: BorderRadius.circular(20),
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Stack(
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: Ink.image(
-                    image: const AssetImage('images/hospital/a.jpg'),
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context).size.width / 1.1,
-                    height: 180,
-                  ),
-                ),
-                Positioned(
-                  bottom: 100,
-                  child: Lottie.asset(
-                    'images/discound.json',
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-              ],
+            const SizedBox(
+              width: 20,
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Material(
-            elevation: 8,
-            borderRadius: BorderRadius.circular(20),
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Stack(
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: Ink.image(
-                    image: const AssetImage('images/hospital/y.jpg'),
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context).size.width / 1.1,
-                    height: 180,
-                  ),
-                ),
-                Positioned(
-                  bottom: 100,
-                  child: Lottie.asset(
-                    'images/discound.json',
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-              ],
+            const SizedBox(
+              width: 20,
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

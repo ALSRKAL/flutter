@@ -8,5 +8,6 @@ void snackbar({required context,required text}){
       backgroundColor: Colors.red,
       
       
-      content: Text(text,style: TextStyle(fontWeight: FontWeight.bold),)));
+      content: Text(text,style:const  TextStyle(fontWeight: FontWeight.bold),)));
   }
+  

@@ -18,5 +18,10 @@ const Map<String , String > en={
   'Erorr':'Erorr',
   'fill blank':'fill blank',
   'invalid phone number':'invalid phone number',
-  'Wrong code Try again':'Wrong code Try again'
+  'Wrong code Try again':'Wrong code Try again',
+  'Confrim Sign Out':'Confrim Sign Out',
+  'Do you really want to sign out ?':'Do you really want to sign out ?',
+  'Cancel':'Cancel',
+  'Confrim':'Confrim'
+
 };

@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
     
     return GetMaterialApp(
       
+      
       theme: ThemeData(
         accentColor: kappbar,
       ),
@@ -52,8 +53,8 @@ class MyApp extends StatelessWidget {
       translations: translation(),
            
       
-      initialRoute:SplashScreen.id,
-      // _auth.currentUser!=null?HomeScreen.id: SingiIn.id,
+      initialRoute:
+      _auth.currentUser!=null?HomeScreen.id: SingiIn.id,
       // 
       routes: {
         SplashScreen.id:(context)=>SplashScreen(),
