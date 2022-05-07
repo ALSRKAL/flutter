@@ -17,7 +17,7 @@ class Photo1slider extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.grey.shade300,
+          backgroundColor: kprimryColors,
           elevation: 0,
           foregroundColor: kappbar,
           title: Text(
@@ -29,7 +29,7 @@ class Photo1slider extends StatelessWidget {
             maxLines: 1,
           ),
         ),
-        backgroundColor: Colors.grey[300],
+        backgroundColor: kprimryColors,
         body: SafeArea(
           child: SingleChildScrollView(
             child: GetBuilder<PhotoSliderGetx>(
@@ -67,7 +67,7 @@ class Photo1slider extends StatelessWidget {
                                   color: kappbar,
                                   child: Text(
                                     'Book'.tr,
-                                    style: TextStyle(
+                                    style:const TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
@@ -98,15 +98,14 @@ class Photo1slider extends StatelessWidget {
                                         TextStyle(overflow: TextOverflow.fade),
                                     maxLines: v.readmore ? null : v.maxline,
                                   ),
-                                 
-                                    TextButton(
-                                      onPressed: () {
-                                        v.reedmore();
-                                      },
-                                      child: v.readmore
-                                          ? Text('less'.tr)
-                                          : Text('more..'.tr),
-                                    )
+                                  TextButton(
+                                    onPressed: () {
+                                      v.reedmore();
+                                    },
+                                    child: v.readmore
+                                        ? Text('less'.tr)
+                                        : Text('more..'.tr),
+                                  )
                                 ],
                               ),
                             )

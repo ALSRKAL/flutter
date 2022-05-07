@@ -1,3 +1,4 @@
+import 'package:doctor/screens/User_information.dart';
 import 'package:doctor/screens/getxphoneAuth/getx.dart';
 import 'package:doctor/screens/singin.dart';
 import 'package:doctor/utils/langs/language_controller.dart';
@@ -9,6 +10,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_utils/get_utils.dart';
+import '../GetxProfile/Getxprofile.dart';
 import 'LanguageScreen.dart';
 
 class Drawar extends StatelessWidget {
@@ -29,6 +31,7 @@ class Drawar extends StatelessWidget {
                       InkWell(
                         //User information
                         onTap: () {
+                          Get.toNamed(profiel.id);
                           
                         },
                         child: Padding(
@@ -44,11 +47,17 @@ class Drawar extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    'User Name'.tr,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                  GetBuilder<GetProfile>(
+                                    init:GetProfile(),
+                                    builder:((v)=>
+                                    
+                                    v.box.read('username')==null?Text('User name'):
+                                     Text(
+                                      v.box.read('username'),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold)
+                                    )
+                                  )),
                                   const SizedBox(height: 5),
                                   Text('${auth.currentUser?.phoneNumber}')
                                 ],

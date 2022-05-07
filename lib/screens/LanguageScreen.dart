@@ -80,6 +80,7 @@ class langScreen extends StatelessWidget {
                 value.sevedLang.value=ar;
                 Get.updateLocale(Locale(ar));
                  value.saveLocale();
+                
                  Get.offNamedUntil(HomeScreen.id, (route) => false);
                  
                   

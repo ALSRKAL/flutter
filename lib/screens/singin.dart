@@ -1,5 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:doctor/screens/Otp_screen.dart';
+import 'package:doctor/screens/homeScreen.dart';
 
 import 'package:doctor/widget/colors.dart';
 import 'package:flutter/material.dart';
@@ -158,6 +159,7 @@ class SingiIn extends StatelessWidget {
                                         Value.showLoading = true;
                                         Value.result = Value.initialCode +
                                             Value.phoneController.text;
+                                            
                                         Value.fetchotp(context)
                                             .then((value) => null)
                                             .catchError(

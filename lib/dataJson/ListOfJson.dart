@@ -1,4 +1,4 @@
-var photoSliderList = [
+List photoSliderList = [
   {
     'name': "3doctors",
     'photo': 'images/hospital/s.jpg',

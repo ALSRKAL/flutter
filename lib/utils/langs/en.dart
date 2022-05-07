@@ -25,6 +25,8 @@ const Map<String , String > en={
   'Confrim':'Confrim',
   'Book':'Book',
   'more..':'more..',
-  'less':'less'
+  'less':'less',
+  'Profile':'Profile',
+  'Heart disease':'Heart disease'
 
 };

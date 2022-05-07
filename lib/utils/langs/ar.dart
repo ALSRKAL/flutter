@@ -25,5 +25,7 @@ const Map<String , String > ar={
   'Confrim':'التاكيد',
   'Book':'احجز',
   'more..':'اكثر',
-  'less':'اقل'
+  'less':'اقل',
+  'Profile':'الملف الشخصي',
+  'Heart disease':'أمراض القلب'
 };
