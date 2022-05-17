@@ -1,16 +1,24 @@
+import 'dart:ffi';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doctor/photoSlider/photoSliderGetx.dart';
 import 'package:doctor/screens/GetxHome/homeGetx.dart';
 import 'package:doctor/screens/drawer.dart';
 import 'package:doctor/screens/heart%20disease/heartDisease.dart';
 import 'package:doctor/utils/langs/language_controller.dart';
 import 'package:doctor/widget/colors.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 import '../widget/SearchBar.dart';
-import '../widget/photoSlider.dart';
+import '../photoSlider/photoSlider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'HomeScreen';
+
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,35 +52,44 @@ class HomeScreen extends StatelessWidget {
             body: GetBuilder<LanguageConotroller>(
               init: LanguageConotroller(),
               builder: ((V) {
-                return Column(children: [
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  photoSlider(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                       const SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Heart disease'.tr,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight:
-                             FontWeight.bold,
-                            color: kfont),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  heartDisease(),
-                ]);
+                return LiquidPullToRefresh(
+                  onRefresh: () async {
+                    print('ref');
+                  },
+                  child: ListView(children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    photoSlider(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            'Heart disease'.tr,
+                            style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: kfont),
+                          ),
+                        ),
+                        Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: GetBuilder<PhotoSliderGet>(
+                              init: PhotoSliderGet(),
+                              builder: ((v) => TextButton(
+                                  onPressed: () {},
+                                  child: const Text('View all'))),
+                            ))
+                      ],
+                    ),
+                    const heartDisease(),
+                  ]),
+                );
               }),
             ),
             drawer: Padding(

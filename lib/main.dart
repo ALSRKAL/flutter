@@ -1,5 +1,3 @@
-
-
 import 'package:country_code_picker/country_localizations.dart';
 import 'package:doctor/screens/Otp_screen.dart';
 import 'package:doctor/screens/User_information.dart';
@@ -16,33 +14,24 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'ErorrWidget.dart';
 
-
 void main() async {
- await GetStorage.init();
+  await GetStorage.init();
   customErrorScreen();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   
-   MyApp({Key? key}) : super(key: key);
-   final _auth = FirebaseAuth.instance;
-  
+  MyApp({Key? key}) : super(key: key);
+  final _auth = FirebaseAuth.instance;
+
   @override
-  
   Widget build(BuildContext context) {
-    
-    SplashScreen();
-    
-    
     return GetMaterialApp(
-      
-      
       theme: ThemeData(
-        accentColor: kappbar,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kappbar),
       ),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
@@ -52,19 +41,16 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('en'),
       // supportedLocales: const [Locale('en', 'US')],
       translations: translation(),
-           
-      
-      initialRoute:
-      _auth.currentUser!=null?HomeScreen.id: SingiIn.id,
-      // 
-      routes: {
-        SplashScreen.id:(context)=>SplashScreen(),
-        SingiIn.id: (context) =>  SingiIn(),
-        OtpScreen.id: (context) => OtpScreen(),
-        HomeScreen.id: (context) => HomeScreen(),
-        profiel.id: (context)=> profiel(),
-        langScreen.id: (context) =>  langScreen(),
 
+      initialRoute: _auth.currentUser != null ? HomeScreen.id : SingiIn.id,
+      //
+      routes: {
+        SplashScreen.id: (context) => const SplashScreen(),
+        SingiIn.id: (context) => const SingiIn(),
+        OtpScreen.id: (context) => const OtpScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
+        profiel.id: (context) => profiel(),
+        langScreen.id: (context) => langScreen(),
       },
     );
   }

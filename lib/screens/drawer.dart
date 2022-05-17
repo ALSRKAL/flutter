@@ -1,11 +1,8 @@
 import 'package:doctor/screens/User_information.dart';
 import 'package:doctor/screens/getxphoneAuth/getx.dart';
-import 'package:doctor/screens/singin.dart';
-import 'package:doctor/utils/langs/language_controller.dart';
 import 'package:doctor/widget/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
@@ -51,7 +48,7 @@ class Drawar extends StatelessWidget {
                                     init:GetProfile(),
                                     builder:((v)=>
                                     
-                                    v.box.read('username')==null?Text('User name'):
+                                    v.box.read('username')==null?const Text('User name'):
                                      Text(
                                       v.box.read('username'),
                                       style: const TextStyle(
@@ -105,7 +102,7 @@ class Drawar extends StatelessWidget {
                               children: [
                                 const Icon(Icons.favorite_border,
                                     color: Colors.red),
-                                SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 Text(
                                   'Your Favorite'.tr,
                                   style:const TextStyle(fontWeight: FontWeight.bold),

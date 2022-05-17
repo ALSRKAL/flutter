@@ -1,7 +1,7 @@
-List photoSliderList = [
+List heartDiseaseList = [
   {
     'name': "3doctors",
-    'photo': 'images/hospital/s.jpg',
+    'photo': 'images/heartDisease/hard.jpg',
     'lottie': 'images/discound.json',
     'price': '1500',
     'location': '',
@@ -27,7 +27,7 @@ So, how do I solve this prklasjdfhksjhdfakjshdfkjasdkfjhaskljdfhkajshdfkljashfkj
   },
   {
     'name': "hospital2",
-    'photo': 'images/hospital/s.jpg',
+    'photo': 'images/heartDisease/hard2.jpg',
     'lottie': 'images/discound.json',
     'title': 'asem hospital',
     'price': '1500',
@@ -35,14 +35,14 @@ So, how do I solve this prklasjdfhksjhdfakjshdfkjasdkfjhaskljdfhkajshdfkljashfkj
   },
   {
     'name': "hotspital3",
-    'photo': 'images/hospital/y.jpg',
+    'photo': 'images/heartDisease/hard5.jpg',
     'title': 'GPG',
     'lottie': 'images/discound.json',
     'price': '1500'
   },
   {
     'name': "hotspital4",
-    'photo': 'images/hospital/a.jpg',
+    'photo': 'images/heartDisease/hard3.jpg',
     'title': 'RGS hospital',
     'lottie': 'images/discound.json',
     'price': '1500'

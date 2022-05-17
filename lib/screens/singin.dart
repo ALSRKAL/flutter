@@ -1,6 +1,4 @@
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:doctor/screens/Otp_screen.dart';
-import 'package:doctor/screens/homeScreen.dart';
 
 import 'package:doctor/widget/colors.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +19,7 @@ class SingiIn extends StatelessWidget {
         builder: (Value) {
           return Scaffold(
             appBar: AppBar(
-                title: Text('Contunie with phone'.tr,style: TextStyle(color: kfont),),
+                title: Text('Contunie with phone'.tr,style: const TextStyle(color: kfont),),
                 centerTitle: true,
                 backgroundColor: Colors.white,
                 foregroundColor: kappbar,
@@ -147,8 +145,7 @@ class SingiIn extends StatelessWidget {
                                   onPressed: ()async {
 
 
-                                      if ((Value.phoneController.text).length <=
-                                          0) {
+                                      if ((Value.phoneController.text).isEmpty) {
                                         Value.showLoading = false;
                                         Get.rawSnackbar(
                                             title: 'Erorr'.tr,
@@ -166,7 +163,7 @@ class SingiIn extends StatelessWidget {
                                               (e) => Get.rawSnackbar(
                                                   title: 'Erorr',
                                                   message:
-                                                      'something went wrong ${e}'),
+                                                      'something went wrong $e'),
                                             );
                                             final signature = await SmsAutoFill().getAppSignature;
                                             print(signature);

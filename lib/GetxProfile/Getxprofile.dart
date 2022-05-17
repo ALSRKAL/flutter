@@ -1,10 +1,5 @@
-import 'package:doctor/pref_service.dart';
-import 'package:doctor/widget/colors.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get_storage/get_storage.dart';
 
 class GetProfile extends GetxController {
@@ -46,7 +41,7 @@ class GetProfile extends GetxController {
 
   void check() async {
     if (Emailcontroller.text == '' || UserNamecontroller.text == '') {
-      await Get.rawSnackbar(
+      Get.rawSnackbar(
           title: 'Erorr',
           message: 'user name and Email  can\'t be empty',
           backgroundColor: Colors.red,overlayBlur: 5);

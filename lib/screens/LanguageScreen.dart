@@ -63,8 +63,8 @@ class langScreen extends StatelessWidget {
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       'English',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -95,8 +95,8 @@ class langScreen extends StatelessWidget {
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       'عربي',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     )

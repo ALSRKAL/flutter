@@ -40,6 +40,7 @@ class phoneAuthCrt extends GetxController {
       }
     } on FirebaseAuthException catch (e) {
       snackbar(text: 'Wrong code Try again'.tr, context: context);
+      print(e);
     }
   }
 

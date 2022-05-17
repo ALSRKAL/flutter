@@ -3,7 +3,6 @@ import 'package:doctor/screens/homeScreen.dart';
 import 'package:doctor/screens/singin.dart';
 import 'package:doctor/widget/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -28,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         splash: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Container(
+            Center(child: SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 100,
               child: Lottie.asset('images/splash.json'))),
@@ -36,6 +35,6 @@ class _SplashScreenState extends State<SplashScreen> {
               const Text('TEXT TEST ',style: TextStyle(color: kfont,fontSize: 18),)
           ],
         ),
-        nextScreen: auth.currentUser!=null?HomeScreen(): SingiIn(),);
+        nextScreen: auth.currentUser!=null?HomeScreen(): const SingiIn(),);
   }
 }

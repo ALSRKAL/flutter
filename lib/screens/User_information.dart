@@ -1,15 +1,10 @@
 import 'package:doctor/GetxProfile/Getxprofile.dart';
 import 'package:doctor/screens/homeScreen.dart';
-import 'package:doctor/utils/langs/en.dart';
 import 'package:doctor/utils/langs/language_controller.dart';
 import 'package:doctor/widget/colors.dart';
-import 'package:doctor/widget/detils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 
 class profiel extends StatelessWidget {
   static const String id = 'UserInfo';
@@ -31,7 +26,7 @@ class profiel extends StatelessWidget {
                           
                           Get.toNamed(HomeScreen.id);
                         },
-                        icon: Icon(Icons.arrow_back))
+                        icon: const Icon(Icons.arrow_back))
                     : Container(),
                 actions: [
                   if (value.editbool)

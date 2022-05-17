@@ -9,7 +9,7 @@ import 'package:get/state_manager.dart';
 class Photo1slider extends StatelessWidget {
   final i;
 
-  Photo1slider({Key? key, required this.i}) : super(key: key);
+  const Photo1slider({Key? key, required this.i}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class Photo1slider extends StatelessWidget {
                                   Text(
                                     "${photoSliderList[i]['subtitle']}",
                                     style:
-                                        TextStyle(overflow: TextOverflow.fade),
+                                        const TextStyle(overflow: TextOverflow.fade),
                                     maxLines: v.readmore ? null : v.maxline,
                                   ),
                                   TextButton(

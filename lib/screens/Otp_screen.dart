@@ -1,15 +1,13 @@
-import 'dart:async';
 import 'package:doctor/screens/singin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import '../widget/colors.dart';
 import 'getxphoneAuth/getx.dart';
 class OtpScreen extends StatefulWidget {
   static const String id = 'otp_screen';
 
-  OtpScreen({Key? key}) : super(key: key);
+  const OtpScreen({Key? key}) : super(key: key);
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -17,7 +15,7 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
   
-  String _selectedlang = 'en';
+  final String _selectedlang = 'en';
 
   final Otpcontroller = TextEditingController();
 @override
@@ -90,7 +88,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
                 margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow:const  [
                     BoxShadow(
                         blurRadius: 3,
                         spreadRadius: 0.0,
@@ -104,7 +102,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   children: [
                      PinFieldAutoFill(
                 decoration: UnderlineDecoration(
-                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                  textStyle: const TextStyle(fontSize: 20, color: Colors.black),
                   colorBuilder: FixedColorBuilder(Colors.black.withOpacity(0.3)),
                 ),
                 
