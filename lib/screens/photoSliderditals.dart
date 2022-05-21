@@ -8,8 +8,10 @@ import 'package:get/state_manager.dart';
 
 class Photo1slider extends StatelessWidget {
   final i;
+  final snapshot;
 
-  const Photo1slider({Key? key, required this.i}) : super(key: key);
+  const Photo1slider({Key? key, required this.i, this.snapshot})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +41,10 @@ class Photo1slider extends StatelessWidget {
                     builder: ((value) => (Column(
                           children: [
                             Hero(
-                              tag: '${photoSliderList[i]['name']}',
+                              tag: snapshot.data!.docs[i]['id'],
                               child: Container(
+                                width: MediaQuery.of(context).size.width - 50,
+                                height: 200,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.black.withOpacity(0.2),
@@ -49,8 +53,10 @@ class Photo1slider extends StatelessWidget {
                                 margin: const EdgeInsets.all(10),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
-                                  child: Image.asset(
-                                      '${photoSliderList[i]['photo']}'),
+                                  child: Image.network(
+                                    '${snapshot.data!.docs[i]['image']}',
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -67,7 +73,7 @@ class Photo1slider extends StatelessWidget {
                                   color: kappbar,
                                   child: Text(
                                     'Book'.tr,
-                                    style:const TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
@@ -94,8 +100,8 @@ class Photo1slider extends StatelessWidget {
                                   ),
                                   Text(
                                     "${photoSliderList[i]['subtitle']}",
-                                    style:
-                                        const TextStyle(overflow: TextOverflow.fade),
+                                    style: const TextStyle(
+                                        overflow: TextOverflow.fade),
                                     maxLines: v.readmore ? null : v.maxline,
                                   ),
                                   TextButton(
